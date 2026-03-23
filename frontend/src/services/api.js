@@ -65,12 +65,19 @@ export const placeOrder = async (orderData) => {
     const response = await api.post('/orders/', orderData);
     return {
       success: true,
-      order_id: response.data.order_id,
-      total: response.data.total,
-      payment_method: response.data.payment_method
+      order_id: response.data.data.order_id,
+      total: response.data.data.total,
+      payment_method: response.data.data.payment_method
     };
   } catch (error) {
     console.error('Error placing order:', error.response?.data || error.message);
+    if (error.response?.data) {
+      if (error.response.data.details) {
+        const messages = Object.values(error.response.data.details).flat().join('\\n');
+        throw new Error(messages);
+      }
+      throw new Error(error.response.data.message || 'Error placing order');
+    }
     throw error;
   }
 };

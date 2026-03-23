@@ -108,7 +108,7 @@ export default function Checkout() {
       }
     } catch (error) {
       console.error(error);
-      alert(error.response?.data?.error || 'Failed to place order. Please check store status and minimum order values.');
+      alert(error.message || 'Failed to place order. Please check store status and minimum order values.');
       setLoading(false);
     }
   };

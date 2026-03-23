@@ -38,7 +38,8 @@ export default function Menu() {
     setTimeout(() => setToastMessage(''), 3000);
   };
 
-  const categories = ['all', 'veg', 'non-veg', 'drinks'];
+  const uniqueCategories = Array.from(new Set(items.map(item => item.category)));
+  const categories = ['all', ...uniqueCategories];
 
   const filteredItems = filter === 'all' ? items : items.filter(item => item.category === filter);
 
