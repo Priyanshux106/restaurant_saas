@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tertiary: #8b4c11;
+  --color-outline-variant: #e4bebc;
+  --color-on-primary-fixed: #410007;
+  --color-background: #f3fcf0;
+  --color-on-primary-container: #fffbff;
+  --color-surface-container-high: #e2ebdf;
+  --color-inverse-surface: #2a322b;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface: #161d16;
+  --color-on-tertiary-container: #fffbff;
+  --color-surface-container: #e7f0e5;
+  --color-primary-container: #db313f;
+  --color-on-tertiary: #ffffff;
+  --color-primary-fixed-dim: #ffb3b1;
+  --color-on-error-container: #93000a;
+  --color-primary: #b7102a;
+  --color-surface-dim: #d4ddd1;
+  --color-on-tertiary-fixed: #2f1400;
+  --color-on-secondary: #ffffff;
+  --color-on-background: #161d16;
+  --color-tertiary-fixed: #ffdcc4;
+  --color-tertiary-container: #a96428;
+  --color-surface-container-low: #edf6ea;
+  --color-on-surface-variant: #5b403f;
+  --color-on-primary-fixed-variant: #92001c;
+  --color-on-tertiary-fixed-variant: #6f3800;
+  --color-primary-fixed: #ffdad8;
+  --color-on-secondary-fixed: #2c1600;
+  --color-tertiary-fixed-dim: #ffb780;
+  --color-secondary-container: #ffca98;
+  --color-error-container: #ffdad6;
+  --color-secondary: #7d562d;
+  --color-secondary-fixed-dim: #f0bd8b;
+  --color-error: #ba1a1a;
+  --color-on-secondary-fixed-variant: #623f18;
+  --color-on-error: #ffffff;
+  --color-outline: #8f6f6e;
+  --color-inverse-primary: #ffb3b1;
+  --color-surface-container-highest: #dce5d9;
+  --color-surface-tint: #bb152c;
+  --color-surface-bright: #f3fcf0;
+  --color-inverse-on-surface: #eaf3e7;
+  --color-surface-variant: #dce5d9;
+  --color-on-secondary-container: #7a532a;
+  --color-secondary-fixed: #ffdcbd;
+
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Manrope", sans-serif;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.serif-tight { letter-spacing: -0.02em; }
+.label-tracking { letter-spacing: 0.05em; text-transform: uppercase; }
+.glaze-gradient { background: linear-gradient(135deg, #b7102a 0%, #db313f 100%); }
+.glass-nav { backdrop-filter: blur(20px); }
+
+/* Additional fixes for layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
