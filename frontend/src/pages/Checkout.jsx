@@ -1,12 +1,23 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { placeOrder } from '../services/api';
+import { placeOrder, createPayment, verifyPayment } from '../services/api';
+
+const loadRazorpay = () => {
+  return new Promise((resolve) => {
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+};
 
 export default function Checkout() {
   const { cartItems, getCartTotal, clearCart } = useCart();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState('cod');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -30,21 +41,74 @@ export default function Checkout() {
     setLoading(true);
     try {
       const orderData = {
-        ...formData,
-        items: cartItems,
-        total,
-        payment_method: 'online'
+        customer_name: formData.name,
+        customer_phone: formData.phone,
+        delivery_address: formData.address,
+        payment_method: paymentMethod,
+        items: cartItems.map(item => ({
+          menu_item_id: item.id,
+          size: item.size || 'full',
+          quantity: item.quantity
+        }))
       };
+
       const response = await placeOrder(orderData);
       
       if (response.success) {
-        clearCart();
-        navigate('/success', { state: { orderId: response.order_id, total, items: cartItems } });
+        if (paymentMethod === 'online') {
+          const res = await loadRazorpay();
+          if (!res) {
+            alert('Razorpay SDK failed to load. Are you online?');
+            setLoading(false);
+            return;
+          }
+
+          const paymentData = await createPayment(response.order_id);
+          
+          const options = {
+            key: paymentData.key_id,
+            amount: paymentData.amount,
+            currency: paymentData.currency,
+            name: "Spice House",
+            description: "Order Payment",
+            order_id: paymentData.razorpay_order_id,
+            handler: async function (paymentResponse) {
+              try {
+                await verifyPayment({
+                  razorpay_order_id: paymentResponse.razorpay_order_id,
+                  razorpay_payment_id: paymentResponse.razorpay_payment_id,
+                  razorpay_signature: paymentResponse.razorpay_signature
+                });
+                clearCart();
+                navigate('/success', { state: { orderId: response.order_id, total, items: cartItems } });
+              } catch (verifyError) {
+                console.error('Payment verification failed', verifyError);
+                alert('Payment verification failed. Please contact support.');
+              }
+            },
+            prefill: {
+              name: formData.name,
+              contact: formData.phone
+            },
+            theme: { color: "#8B4513" },
+            modal: {
+              ondismiss: function() {
+                setLoading(false);
+              }
+            }
+          };
+          
+          const paymentObject = new window.Razorpay(options);
+          paymentObject.open();
+        } else {
+          // COD Flow
+          clearCart();
+          navigate('/success', { state: { orderId: response.order_id, total, items: cartItems } });
+        }
       }
     } catch (error) {
       console.error(error);
-      alert('Failed to place order.');
-    } finally {
+      alert(error.response?.data?.error || 'Failed to place order. Please check store status and minimum order values.');
       setLoading(false);
     }
   };
@@ -87,9 +151,36 @@ export default function Checkout() {
                   <textarea value={formData.address} onChange={handleChange} className="w-full bg-surface-container-highest border-none focus:ring-0 focus:border-b-2 focus:border-primary px-4 py-4 rounded-md transition-all font-body text-on-surface resize-none" id="address" placeholder="Enter your street address, apartment, or suite..." rows="3"></textarea>
                 </div>
 
+                {/* Payment Method Details */}
+                <div className="space-y-4 pt-4">
+                  <h2 className="text-2xl font-headline font-bold text-secondary mb-4">Payment Method</h2>
+                  <div className="flex flex-col gap-4 md:flex-row">
+                    <label className={`flex-1 border-2 rounded-xl p-4 flex cursor-pointer transition-all ${paymentMethod === 'cod' ? 'border-primary bg-primary/5' : 'border-outline-variant hover:border-outline'}`}>
+                      <input type="radio" value="cod" checked={paymentMethod === 'cod'} onChange={(e) => setPaymentMethod(e.target.value)} className="sr-only" />
+                      <div className="flex items-center gap-3">
+                        <span className={`material-symbols-outlined ${paymentMethod === 'cod' ? 'text-primary' : 'text-on-surface-variant'}`}>payments</span>
+                        <div className="font-body">
+                          <p className={`font-bold ${paymentMethod === 'cod' ? 'text-primary' : 'text-on-surface'}`}>Cash on Delivery</p>
+                          <p className="text-xs text-on-surface-variant">Pay when you receive</p>
+                        </div>
+                      </div>
+                    </label>
+                    <label className={`flex-1 border-2 rounded-xl p-4 flex cursor-pointer transition-all ${paymentMethod === 'online' ? 'border-primary bg-primary/5' : 'border-outline-variant hover:border-outline'}`}>
+                      <input type="radio" value="online" checked={paymentMethod === 'online'} onChange={(e) => setPaymentMethod(e.target.value)} className="sr-only" />
+                      <div className="flex items-center gap-3">
+                        <span className={`material-symbols-outlined ${paymentMethod === 'online' ? 'text-primary' : 'text-on-surface-variant'}`}>credit_card</span>
+                        <div className="font-body">
+                          <p className={`font-bold ${paymentMethod === 'online' ? 'text-primary' : 'text-on-surface'}`}>Pay Online</p>
+                          <p className="text-xs text-on-surface-variant">Cards, UPI, Netbanking</p>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
                 <div className="pt-8">
                   <button disabled={loading || cartItems.length === 0} type="submit" className="w-full bg-primary text-on-primary font-headline font-bold text-xl py-5 rounded-md hover:bg-primary-container transition-all duration-300 shadow-xl shadow-primary/10 scale-100 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed">
-                    {loading ? 'Processing...' : 'Place Order'}
+                    {loading ? (paymentMethod === 'online' ? 'Processing...' : 'Placing Order...') : 'Place Order'}
                   </button>
                   <p className="text-center mt-6 text-on-surface-variant text-sm font-body italic">
                     By placing your order, you agree to our <a className="underline decoration-outline-variant hover:text-primary transition-colors" href="#">Terms of Service</a>.
