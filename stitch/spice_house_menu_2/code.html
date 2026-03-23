@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Culinary Editorial | Spice House Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#8b4c11",
+              "outline-variant": "#e4bebc",
+              "on-primary-fixed": "#410007",
+              "background": "#f3fcf0",
+              "on-primary-container": "#fffbff",
+              "surface-container-high": "#e2ebdf",
+              "inverse-surface": "#2a322b",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#161d16",
+              "on-tertiary-container": "#fffbff",
+              "surface-container": "#e7f0e5",
+              "primary-container": "#db313f",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#ffb3b1",
+              "on-error-container": "#93000a",
+              "primary": "#b7102a",
+              "surface-dim": "#d4ddd1",
+              "on-tertiary-fixed": "#2f1400",
+              "on-secondary": "#ffffff",
+              "on-background": "#161d16",
+              "tertiary-fixed": "#ffdcc4",
+              "tertiary-container": "#a96428",
+              "surface-container-low": "#edf6ea",
+              "on-surface-variant": "#5b403f",
+              "on-primary-fixed-variant": "#92001c",
+              "on-tertiary-fixed-variant": "#6f3800",
+              "primary-fixed": "#ffdad8",
+              "on-secondary-fixed": "#2c1600",
+              "tertiary-fixed-dim": "#ffb780",
+              "secondary-container": "#ffca98",
+              "error-container": "#ffdad6",
+              "secondary": "#7d562d",
+              "secondary-fixed-dim": "#f0bd8b",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#623f18",
+              "on-error": "#ffffff",
+              "outline": "#8f6f6e",
+              "inverse-primary": "#ffb3b1",
+              "surface-container-highest": "#dce5d9",
+              "surface-tint": "#bb152c",
+              "surface-bright": "#f3fcf0",
+              "inverse-on-surface": "#eaf3e7",
+              "surface-variant": "#dce5d9",
+              "on-secondary-container": "#7a532a",
+              "secondary-fixed": "#ffdcbd",
+              "on-primary": "#ffffff",
+              "surface": "#f3fcf0"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-tight { letter-spacing: -0.02em; }
+        .label-tracking { letter-spacing: 0.05em; text-transform: uppercase; }
+        .glaze-gradient { background: linear-gradient(135deg, #b7102a 0%, #db313f 100%); }
+        .glass-nav { backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#f3fcf0]/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif font-bold text-[#b7102a] dark:text-[#db313f] tracking-tighter">
+                The Culinary Editorial
+            </div>
+<!-- Desktop Navigation -->
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#edf6ea]/50 dark:hover:bg-stone-800/50 transition-all rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[#161d16] dark:text-stone-100" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="md:hidden p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 min-h-screen">
+<!-- Hero Branding Section -->
+<section class="px-6 py-12 md:py-20 max-w-screen-2xl mx-auto">
+<div class="relative overflow-hidden bg-surface-container-low rounded-xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-6 z-10">
+<span class="font-label text-label-md label-tracking text-secondary font-bold">Welcome to Spice House</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-on-surface serif-tight leading-tight">
+                        The Seasonal <br/><span class="italic text-primary">Atelier</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed">
+                        A curated editorial of flavors, crafted with traditional spices and modern culinary precision.
+                    </p>
+</div>
+<div class="flex-1 w-full aspect-video md:aspect-square relative overflow-hidden rounded-lg shadow-2xl">
+<img alt="Gourmet Plating" class="w-full h-full object-cover" data-alt="Close up of a gourmet spicy meat dish with garnish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDREOdKHLmqvg7Th4yNOfuAdaHWig354iyTs05Z1lqs1sBBUX_DGSD2IAO1NMjk37L5w2qeWnOt_2WlHvQ7gIQ3eD9Itxl2PjBS7Qm4emXHsFExEs5csRNzNsb8w7pNtu7b33TKZZ7WZ0EhfJezN6VvJKr5uwK2EdtLnyxJRCp9Kr7gJFqOs7zWsH0HzLez52YyxEEkbmMWp5zGcqBBwJYps3HMlQ4-298tnv_0Mm-9PTabfD6Y6JGdKVgWJSnBuMe3k1EYpucAADes"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/20 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Category Filter -->
+<section class="px-6 py-8 max-w-screen-2xl mx-auto sticky top-20 z-40 bg-background/95 backdrop-blur-sm">
+<div class="flex flex-wrap items-center justify-center gap-3 md:gap-6">
+<button class="px-8 py-2 rounded-full font-label text-sm font-bold label-tracking glaze-gradient text-on-primary shadow-lg shadow-primary/20 transition-transform active:scale-95">All</button>
+<button class="px-8 py-2 rounded-full font-label text-sm font-bold label-tracking bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300">Veg</button>
+<button class="px-8 py-2 rounded-full font-label text-sm font-bold label-tracking bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300">Non-Veg</button>
+<button class="px-8 py-2 rounded-full font-label text-sm font-bold label-tracking bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300">Drinks</button>
+</div>
+</section>
+<!-- Menu Grid -->
+<section class="px-6 py-12 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+<!-- Food Card 1 -->
+<article class="group relative flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low rounded-lg transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Spicy Dan Dan Noodles" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Overhead view of spicy noodles in a bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcPWrKg4V52aNNlKB8213O8beBrvX1F4_DLLs32kiLlWxPVf-bbpxMFMYTLH06yI9kv3fvIrjiRM5C7mDbagriXu7JH-8CfdBy3RRHICIRFG4ZC5BNOXZwNyUz2-yCwqSC-CssbGmIGKsntNw8AeSua-PlyLY_1ZBZW1fcUU7zU2-P7fR7VS-eVCowdGe3cMYgMXzzASNXf_rwGDls33yepDgLAJzKNbKoFG08FSEVopqaaYkgTSBf78oDnBE6NeWryaTA8bO7Qxr8"/>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 px-3 py-1 rounded-full shadow-sm">
+<span class="font-label text-xs font-bold text-primary">$18.50</span>
+</div>
+</div>
+<div class="mt-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Saffron Silk Noodles</h3>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-2">
+                            Hand-pulled noodles tossed in a signature saffron-infused chili oil and toasted sesame.
+                        </p>
+<button class="mt-auto w-full py-3 font-label text-xs font-bold label-tracking border border-outline-variant/30 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 flex items-center justify-center gap-2">
+                            Add to Cart
+                            <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</article>
+<!-- Food Card 2 -->
+<article class="group relative flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low rounded-lg transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Tandoori Smoked Salmon" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Grilled salmon steak with bright red spices" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpjINp2_GgaFKcJtO-_brst8TAfFQQY7ysuAJ5O3rgTXLv5bysLrHvLGNl2djnW3DA8Hz3UVCOZH1GJ4fozeGI81QxfM_OCwEkV2vnrBnPMn1qodpDmtb4L0BUgS02DX9umQ_l0ruBwspmxE3wpdkVUZoU7plMF5TIyDvIFI3qkXcZkjoTOFFWdwRdHSd-U9qUIBcHlBaOYcjj60r-yvWbQD7Ag3LrYtYxTF4b5da5nddDJMWaXn65m-9HS4RFND5OckPAr-p-adq0"/>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 px-3 py-1 rounded-full shadow-sm">
+<span class="font-label text-xs font-bold text-primary">$24.00</span>
+</div>
+</div>
+<div class="mt-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Crimson Smoked Salmon</h3>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-2">
+                            Hardwood smoked salmon glazed in a pomegranate and Kashmiri chili reduction.
+                        </p>
+<button class="mt-auto w-full py-3 font-label text-xs font-bold label-tracking border border-outline-variant/30 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 flex items-center justify-center gap-2">
+                            Add to Cart
+                            <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</article>
+<!-- Food Card 3 -->
+<article class="group relative flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low rounded-lg transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Garden Harvest Bowl" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Vibrant healthy salad bowl with roasted vegetables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4pbSlAFCncQSfr6YoiwXLxqHvn_UYgxOvuw6fQic3jZ1rKS9DTzqLHaq5N5QxCeexm_aHReDl7Kw3Oz40a1AurR31M_FYxN7qV_7Pr6FD9kGntLB6bu6uCmYSaXhCBDHybcTQ15uckp_xUhoRjOTUZ4yfx6tP7gMTmrwgSOn3_01JD-AEp6X2e9wMOq-4NcbUbRRVz34KjFyEXx35g8v2ucmOLSI4z6tsCnXsM9_45yf3hHNDmMBZ1VAoamiEG5oU_oIO-vHQ-QEr"/>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 px-3 py-1 rounded-full shadow-sm">
+<span class="font-label text-xs font-bold text-primary">$16.99</span>
+</div>
+</div>
+<div class="mt-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Heirloom Spice Bowl</h3>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="eco" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-2">
+                            Seasonal vegetables slow-roasted with turmeric dust and finished with a citrus mint drizzle.
+                        </p>
+<button class="mt-auto w-full py-3 font-label text-xs font-bold label-tracking border border-outline-variant/30 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 flex items-center justify-center gap-2">
+                            Add to Cart
+                            <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</article>
+<!-- Food Card 4 -->
+<article class="group relative flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low rounded-lg transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Signature Cocktail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Exotic cocktail glass with orange garnish and dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6qXFsRqLWfpEgJzaDBYZpqt6uAriJgr9UYsHpZgp2lhRhFiNfhBI7MKSXN5EPcM8K9ydlL-7WmLl-JRoB4QpzzJ8Yi7x4PIA72TgHzcF152PlzsYwP4qe9HgAiq9dLceqRYARuZjP5JsF7mtBzYO1etsEFU7CB-pORVQ0_sR-Gc5lno8HEn7JNxJNOsGlgn0uD5WbMs9-KQjpyWYkx0FLCXy5pZ2_JwcIGp2e-A5LvUTzvtIjncgUQQOPVhcvbfyChBa3f8mVKqKw"/>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 px-3 py-1 rounded-full shadow-sm">
+<span class="font-label text-xs font-bold text-primary">$14.00</span>
+</div>
+</div>
+<div class="mt-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Smoked Clove Martini</h3>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="local_bar" style="font-variation-settings: 'FILL' 1;">local_bar</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-2">
+                            A complex blend of botanicals smoked with organic cloves and a hint of star anise.
+                        </p>
+<button class="mt-auto w-full py-3 font-label text-xs font-bold label-tracking border border-outline-variant/30 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 flex items-center justify-center gap-2">
+                            Add to Cart
+                            <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Spice Meter / Special Promo Bento -->
+<section class="px-6 py-12 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-primary-fixed p-8 rounded-xl relative overflow-hidden flex flex-col justify-center">
+<div class="z-10 max-w-md space-y-4">
+<h2 class="font-headline text-3xl font-bold text-on-primary-fixed">The Chef's Curated Box</h2>
+<p class="text-on-primary-fixed-variant leading-relaxed">Experience the full spectrum of our spice house. A rotating selection of four dishes paired with house-made journals.</p>
+<button class="px-8 py-3 bg-primary text-on-primary font-label text-xs font-bold label-tracking rounded shadow-xl shadow-primary/30 transition-all hover:brightness-110 active:scale-95">Explore the Box</button>
+</div>
+<span class="absolute -bottom-10 -right-10 text-[12rem] text-primary/5 font-serif font-black italic select-none">Spice</span>
+</div>
+<div class="bg-surface-container-high p-8 rounded-xl flex flex-col items-center justify-center text-center space-y-4">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<h4 class="font-headline text-xl font-bold text-on-surface">The Heat Level</h4>
+<p class="text-sm text-on-surface-variant px-4">Our "Spice Meter" allows you to customize the intensity of any dish to your palate.</p>
+<div class="w-full h-1 bg-outline-variant/20 rounded-full relative mt-4">
+<div class="absolute left-0 top-0 h-full w-2/3 glaze-gradient rounded-full"></div>
+<div class="absolute left-2/3 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-surface-container-lowest border-2 border-primary rounded-full shadow-md"></div>
+</div>
+<div class="flex justify-between w-full font-label text-[10px] label-tracking text-on-surface-variant font-bold">
+<span>Mild</span>
+<span>Inferno</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full mt-24 bg-[#edf6ea] dark:bg-stone-950 border-t border-[#e4bebc]/15 dark:border-stone-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full gap-6 max-w-screen-2xl mx-auto">
+<div class="font-serif italic text-lg text-[#161d16] dark:text-stone-100">
+                The Culinary Editorial
+            </div>
+<div class="flex gap-8">
+<a class="font-sans text-sm tracking-wide uppercase text-[#161d16]/70 dark:text-stone-500 hover:text-[#b7102a] transition-all hover:underline decoration-[#b7102a] underline-offset-4" href="#">Privacy Policy</a>
+<a class="font-sans text-sm tracking-wide uppercase text-[#161d16]/70 dark:text-stone-500 hover:text-[#b7102a] transition-all hover:underline decoration-[#b7102a] underline-offset-4" href="#">Terms of Service</a>
+<a class="font-sans text-sm tracking-wide uppercase text-[#161d16]/70 dark:text-stone-500 hover:text-[#b7102a] transition-all hover:underline decoration-[#b7102a] underline-offset-4" href="#">Contact Us</a>
+<a class="font-sans text-sm tracking-wide uppercase text-[#161d16]/70 dark:text-stone-500 hover:text-[#b7102a] transition-all hover:underline decoration-[#b7102a] underline-offset-4" href="#">Locations</a>
+</div>
+<div class="font-sans text-sm tracking-wide uppercase text-[#161d16] dark:text-stone-300">
+                © 2024 The Culinary Editorial. Crafted with Heat.
+            </div>
+</div>
+</footer>
+<!-- Toast Mockup (Indicator Only) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 opacity-0 pointer-events-none transition-opacity duration-300">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label text-xs font-bold label-tracking">Added to cart successfully</span>
+</div>
+</body></html>

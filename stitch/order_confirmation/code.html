@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#db313f",
+                        "surface-dim": "#dbdada",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#008379",
+                        "surface-tint": "#bb152c",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "background": "#fbf9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#00201d",
+                        "secondary-fixed": "#ffdcc4",
+                        "inverse-primary": "#ffb3b1",
+                        "primary-fixed": "#ffdad8",
+                        "on-secondary-container": "#783d01",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-highest": "#e4e2e2",
+                        "secondary": "#8e4e14",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "tertiary-fixed": "#8cf4e8",
+                        "outline-variant": "#e4bebc",
+                        "on-primary-fixed-variant": "#92001c",
+                        "surface": "#fbf9f9",
+                        "surface-bright": "#fbf9f9",
+                        "inverse-surface": "#303031",
+                        "on-tertiary-container": "#f3fffc",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "secondary-container": "#ffab69",
+                        "primary": "#b7102a",
+                        "on-surface-variant": "#5b403f",
+                        "surface-container-high": "#e9e8e8",
+                        "on-primary-container": "#fffbff",
+                        "surface-variant": "#e4e2e2",
+                        "on-secondary-fixed": "#2f1400",
+                        "surface-container": "#efeded",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f5f3f3",
+                        "secondary-fixed-dim": "#ffb780",
+                        "tertiary-fixed-dim": "#6fd8cc",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "outline": "#8f6f6e",
+                        "on-background": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#410007",
+                        "tertiary": "#006860"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbf9f9;
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopAppBar Fragment: Suppressed Navigation for Transactional Success -->
+<header class="bg-[#fbf9f9] dark:bg-stone-950 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif italic text-[#b7102a] dark:text-[#db313f]">Spice House</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#1b1c1c] dark:text-stone-400 cursor-pointer hover:text-[#b7102a] transition-colors duration-300">person</span>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-4 py-12">
+<div class="max-w-2xl w-full text-center">
+<!-- Success Status Section -->
+<section class="mb-12">
+<div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-tertiary-container mb-8 shadow-sm">
+<span class="material-symbols-outlined text-white text-5xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-bold text-on-surface mb-4 leading-tight">Your order has been placed successfully!</h1>
+<p class="text-on-surface-variant font-light text-lg italic mb-2">Order #SH-829104</p>
+<div class="bg-surface-container-low py-3 px-6 rounded-lg inline-block text-secondary font-medium">
+                    The restaurant will call you to confirm your order.
+                </div>
+</section>
+<!-- Order Summary Bento Grid -->
+<section class="bg-surface-container-low rounded-xl p-8 mb-10 text-left border-l-4 border-primary">
+<h2 class="text-2xl font-bold mb-8 text-on-surface">Order Summary</h2>
+<div class="space-y-6">
+<div class="flex justify-between items-start group">
+<div>
+<p class="font-semibold text-on-surface">Saffron Infused Biryani</p>
+<p class="text-sm text-on-surface-variant font-light">Extra mild, Basmati rice base</p>
+</div>
+<span class="text-on-surface font-medium">$24.00</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-semibold text-on-surface">Truffle Garlic Naan</p>
+<p class="text-sm text-on-surface-variant font-light">Set of two</p>
+</div>
+<span class="text-on-surface font-medium">$9.00</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-semibold text-on-surface">Cardamom Rose Lassi</p>
+<p class="text-sm text-on-surface-variant font-light">Chilled</p>
+</div>
+<span class="text-on-surface font-medium">$7.50</span>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-outline-variant/30">
+<div class="flex justify-between items-center mb-2">
+<span class="text-on-surface-variant text-sm uppercase tracking-widest">Subtotal</span>
+<span class="text-on-surface-variant">$40.50</span>
+</div>
+<div class="flex justify-between items-center mb-6">
+<span class="text-on-surface-variant text-sm uppercase tracking-widest">Service Fee</span>
+<span class="text-on-surface-variant">$4.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-on-surface">Total</span>
+<span class="text-2xl font-bold text-primary">$44.50</span>
+</div>
+</div>
+</section>
+<!-- Action Section -->
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="bg-primary hover:bg-primary-container text-white px-10 py-4 rounded-md font-medium transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 w-full sm:w-auto">
+                    Back to Menu
+                </button>
+<button class="bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-white px-10 py-4 rounded-md font-medium transition-all duration-300 w-full sm:w-auto">
+                    Track Order
+                </button>
+</div>
+<!-- Visual Asymmetry Decoration -->
+<div class="mt-16 relative h-40 overflow-hidden rounded-xl opacity-80 md:opacity-100">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent z-10"></div>
+<img alt="Spices and ingredients" class="w-full h-full object-cover" data-alt="Overhead view of scattered Indian spices on a stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoAsiKaf5qXoE1uNt1DlBGtAqol5REFobtExPDuDhvZjyoVPrhDVv8Mw_cRbGZm-9-zeGVZ1WBSb8Qu8qcPLMkfrE7mz8Ce49OF_Ops5NT0gt6cEMcMd4x7IQSlVPUEbb21kR2JvtPHH88uHT9pFx6RnWCcLKNBGYs6CZTaRgqLQnDZGa3CPqPw1dzwE-TFNdb8jBIr_Ss4d37kXjRnPw2ukz2_ufIWIsitsWXnuAB0VrXjNcJwLV_p4xxyAWiRstL4iy40-Gtmd7J"/>
+<div class="absolute bottom-4 left-6 z-20">
+<p class="text-white font-serif italic text-xl drop-shadow-md">Handcrafted with passion.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Decoration -->
+<footer class="py-8 text-center border-t border-surface-container">
+<p class="text-on-surface-variant text-xs uppercase tracking-[0.2em] font-light">Spice House © 2024 • Culinary Excellence</p>
+</footer>
+<!-- Bottom Nav Suppressed for transactional focus as per mandate -->
+</body></html>
